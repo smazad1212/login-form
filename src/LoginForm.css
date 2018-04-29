@@ -23,6 +23,7 @@
 .login-form-body {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .login-form-body > * {
   margin: 1rem 0;
@@ -31,6 +32,8 @@
 .login-form-label {
   display: flex;
   align-items: center;
+  max-width: 80%;
+  flex-wrap: wrap;
 }
 
 .login-form--input,
@@ -42,21 +45,51 @@
 
 .login-form--input {
   order: 1;
+  flex-grow: 1;
 }
 
 .login-form-label--icon {
   width: 1.5rem;
   height: 1.5rem;
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: 0.2s all;
+  transition: all 0.2s;
+  stroke-dasharray: 0, 100;
+  stroke-dashoffset: -14.142;
 }
 .login-form-label--icon path {
   stroke: var(--black);
-  stroke-width: 1px;
+  stroke-width: 2px;
   fill: none;
 }
 .login-form--input:focus + .login-form-label--icon {
-  opacity: 1;
-  transform: translateX(0);
+  stroke-dasharray: 28.284, 100;
+  stroke-dashoffset: 0;
+}
+
+.login-form--border {
+  width: 100%;
+  order: 2;
+  stroke: #cccccc;
+  height: 2px;
+  margin-left: 1.5rem;
+}
+.login-form--border-focus,
+.login-form--border-valid,
+.login-form--border-invalid {
+  transition: all 0.2s;
+  stroke-dasharray: 0, 40;
+  stroke-dashoffset: 0;
+}
+.login-form--border-focus {
+  stroke: var(--black);
+}
+.login-form--border-valid {
+  stroke: #4caf50;
+}
+.login-form--border-invalid {
+  stroke: #d32f2f;
+}
+.login-form--input:focus ~ .login-form--border .login-form--border-focus,
+.login-form--input:valid ~ .login-form--border .login-form--border-valid {
+/*.login-form--input:valid ~ .login-form--border .login-form--border-invalid {*/
+  stroke-dasharray: 40, 0;
 }
