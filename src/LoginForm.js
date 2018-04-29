@@ -11,10 +11,16 @@ class LoginForm extends Component {
           <form className="login-form-body">
             <label className="login-form-label">
               <input className="login-form--input" type="text" placeholder="Username" name="username" />
+              <svg viewBox="0 0 20 20" className="login-form-label--icon">
+                <path d="M0 0 L10 10 L0 20" />
+              </svg>
             </label>
 
             <label className="login-form-label">
               <input className="login-form--input" type="password" placeholder="Password" name="password" />
+              <svg viewBox="0 0 20 20" className="login-form-label--icon">
+                <path d="M0 0 L10 10 L0 20" />
+              </svg>
             </label>
 
             <button className="login-form--btn" type="submit">

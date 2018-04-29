@@ -28,8 +28,35 @@
   margin: 1rem 0;
 }
 
+.login-form-label {
+  display: flex;
+  align-items: center;
+}
+
 .login-form--input,
 .login-form--btn {
   padding: 1rem;
   border: 0;
+  outline: none;
+}
+
+.login-form--input {
+  order: 1;
+}
+
+.login-form-label--icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: 0.2s all;
+}
+.login-form-label--icon path {
+  stroke: var(--black);
+  stroke-width: 1px;
+  fill: none;
+}
+.login-form--input:focus + .login-form-label--icon {
+  opacity: 1;
+  transform: translateX(0);
 }

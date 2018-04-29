@@ -1,3 +1,7 @@
+:root {
+  --black: #333;
+}
+
 html {
   font-size: 10px;
 }
@@ -6,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1.6rem;
-  color: #333;
+  color: var(--black);
 }
 body * {
   font-family: 'Open Sans', sans-serif;
